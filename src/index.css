@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: #f8fafc; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #6366f1, #8b5cf6); border-radius: 10px; }
+
+.gradient-text { @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent; }
+.gradient-bg { @apply bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500; }
+.card { @apply bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1; }
+.btn-primary { @apply gradient-bg text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-indigo-500/30 transition hover:scale-105; }
+.btn-secondary { @apply bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition; }
+.input { @apply w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-up { animation: fadeUp 0.5s ease both; }
+
+.dark { --bg-primary: #0f172a; --bg-secondary: #1e293b; }
+.dark body { background: var(--bg-primary); color: #f8fafc; }
+.dark .bg-white { background: var(--bg-secondary); }
+.dark .text-gray-800 { color: #f8fafc; }
+.dark .text-gray-600 { color: #94a3b8; }
+.dark .bg-gray-50 { background: var(--bg-primary); }
+/* Product Name Fix */
+.product-name {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: white !important;
+  display: block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
